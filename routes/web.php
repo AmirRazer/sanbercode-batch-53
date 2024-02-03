@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\genre;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -26,4 +27,14 @@ Route::get('data-table',function(){
 Route::get('table',function(){
     return view('pages.table');    
 });
+
+Route::get('/genre',[genre::class,'index']);
+Route::get('/genre/create',[genre::class,'create']);
+Route::post('/genre',[genre::class,'store']);
+Route::get('/genre/{id}',[genre::class,'show']);
+Route::get('/genre/{id}/edit',[genre::class,'edit']);
+Route::put('/genre/{id}',[genre::class,'update']);
+Route::delete('/genre/{id}',[genre::class,'destroy']);
+
+
 
